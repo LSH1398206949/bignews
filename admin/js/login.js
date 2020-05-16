@@ -13,9 +13,14 @@ $(function () {
             beforeSend: function () {
                 // 先判断是否有空格
                 var flag = false;
-                if ($.trim($('.input_txt').val()) == '' || $.trim($('.input_pass').val()) == '') {
-                    flag = true;
-                }
+                // if ($.trim($('.input_txt').val()) == '' || $.trim($('.input_pass').val()) == '') {
+                //     flag = true;
+                // }
+                $('.login_form input[name]').each(function (index, ele) {
+                    if ($.trim($(ele).val()) == '') {
+                        flag = true;
+                    }
+                })
                 if (flag) {
                     // alert('用户名和密码不能为空，请重新输入')
                     //使用模态框
