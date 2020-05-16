@@ -2,7 +2,8 @@ $(function () {
     // 1.一登录就向服务器发请求
     $.ajax({
         type: 'get',
-        url: 'http://localhost:8080/api/v1/admin/user/info',
+        // url: 'http://localhost:8080/api/v1/admin/user/info',
+        url: BigNew.user_info,
         // 需要设置请求头：token
         headers: {
             'Authorization': localStorage.getItem('token')

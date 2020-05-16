@@ -7,7 +7,9 @@ $(function () {
         $.ajax({
             type: 'post',
             //基地址+接口地址
-            url: 'http://localhost:8080/api/v1/admin/user/login',
+            // url: 'http://localhost:8080/api/v1/admin/user/login',
+            // 每次输入地址太麻烦，可以将接口文档封装
+            url: BigNew.user_login,
             // 表单input标签需要有name属性
             data: $('.login_form').serialize(),
             beforeSend: function () {
