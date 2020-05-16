@@ -17,16 +17,24 @@ $(function () {
                     flag = true;
                 }
                 if (flag) {
-                    alert('用户名和密码不能为空，请重新输入')
+                    // alert('用户名和密码不能为空，请重新输入')
+                    //使用模态框
+                    $('.modal').modal('show');
+                    $('.modal-body p').text('用户名和密码不能为空，请重新输入')
                     return false;
                 }
             },
             success: function (res) {
                 // console.log(res);
-                alert(res.msg);
+                // alert(res.msg);
+                $('.modal').modal('show');
+                $('.modal-body p').text(res.msg)
                 if (res.code == 200) {
                     // 跳转页面（webapi倒数第二天）
-                    window.location.href = './index.html'
+                    $('.modal').on('hidden.bs.modal', function (e) {
+                        window.location.href = './index.html'
+
+                    })
                 }
             }
         })
