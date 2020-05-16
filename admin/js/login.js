@@ -37,6 +37,8 @@ $(function () {
                 if (res.code == 200) {
                     // 跳转页面（webapi倒数第二天）
                     $('.modal').on('hidden.bs.modal', function (e) {
+                        //把token字符串进行本地存储
+                        localStorage.setItem('token', res.token)
                         window.location.href = './index.html'
 
                     })
